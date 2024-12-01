@@ -1,0 +1,51 @@
+{
+    "inputs": [
+        {"type": "smell right", "id": 1, "weight": 1.0, "active": false},
+        {"type": "smell left", "id": 2, "weight": 1.0, "active": false},
+        {"type": "smell up", "id": 3, "weight": 1.0, "active": false},
+        {"type": "smell down", "id": 4, "weight": 1.0, "active": false},
+        {"type": "wall right", "id": 5, "weight": -2.0, "active": false},
+        {"type": "wall left", "id": 6, "weight": -2.0, "active": false},
+        {"type": "wall up", "id": 7, "weight": -2.0, "active": false},
+        {"type": "wall down", "id": 8, "weight": -2.0, "active": false},
+        {"type": "treat near", "id": 9, "weight": 1, "active": false},
+        {"type": "wall right 2", "id": 10, "weight": 1.0, "active": false},
+        {"type": "wall left 2", "id": 11, "weight": 1.0, "active": false},
+        {"type": "wall up 2", "id": 12, "weight": 1.0, "active": false},
+        {"type": "wall down 2", "id": 13, "weight": 1.0, "active": false}
+    ],
+    "neurons": [
+        {"id": 1, "threshold": 0.1},  
+        {"id": 2, "threshold": 0.1},
+        {"id": 3, "threshold": 0.1},
+        {"id": 4, "threshold": 0.1},
+        {"id": 5, "threshold": 0.1}
+    ],
+    "outputs": [
+        {"type": "right", "strength": 0.4, "id": 1},
+        {"type": "left", "strength": 0.4, "id": 2},
+        {"type": "up", "strength": 0.4, "id": 3},
+        {"type": "down", "strength": 0.4, "id": 4},
+        {"type": "eat", "strength": 1.0, "id": 5}
+    ],
+    "connections": {
+        "input_to_neuron": [
+            {"from_id": 1, "to_id": 1, "weight": 0.1},
+            {"from_id": 2, "to_id": 2, "weight": 0.1},
+            {"from_id": 3, "to_id": 3, "weight": 0.1},
+            {"from_id": 4, "to_id": 4, "weight": 0.1},
+            {"from_id": 5, "to_id": 1, "weight": 0.1},
+            {"from_id": 6, "to_id": 2, "weight": 0.1},
+            {"from_id": 7, "to_id": 3, "weight": 0.1},
+            {"from_id": 8, "to_id": 4, "weight": 0.1},
+            {"from_id": 9, "to_id": 5, "weight": 0.1}
+        ],
+        "neuron_to_output": [
+            {"from_id": 1, "to_id": 1, "weight": 1.0}, 
+            {"from_id": 2, "to_id": 2, "weight": 1.0},
+            {"from_id": 3, "to_id": 3, "weight": 1.0}, 
+            {"from_id": 4, "to_id": 4, "weight": 1.0},
+            {"from_id": 5, "to_id": 5, "weight": 1.0}
+        ]
+    }
+}
